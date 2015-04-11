@@ -1,0 +1,20 @@
+For our project we plan to extend ray tracing to render materials with interesting physical properties. This will include some simpler goals such as capturing the mirror and distortion affects of glass objects, and contains the final goal of realistically rendering static fluids. To do this we will need to implement the refractive and reflective properties of transluscent materials, and a model for subsurface scattering. Once these are done we also hope to implement some features to allow us to extend this to more complicated scenes. These features may include an acceleration data structure, bouncing rays off of an interpolated normal so we can render triangle meshes well, placing an image behind the camera to be reflected, and rendering to an image file. We would also ideally like to use photon mapping to capture caustics.
+
+Test cases and their motivation
+
+A) To test the reflection and refraction of transluscent materials we will use three scenes
+	1) A non-perfect glass pane capturing the reflection of a sphere
+	2) A hollow sphere distorting the scene behind it and capturing some of the scene in front of it
+	3) A cup of water disorting scene behind it
+
+B) To test subsurface scattering we will use  scenes
+	1) Spheres of various sizes to see if the sense of scale is captured
+	2) A glass of milk
+	3) A glass of some transluscent fluid such as wine. We have a model but it is way too big so we are looking for others. 
+		If we get to photon mapping to capture caustics this will also be a good test scene.
+
+To summarize: Our primary goals are to accurately capture the refractive and reflective properties of transluscent materials.
+Things we will work on given time include photon mapping to capture caustics through fluids, smooth renderings of trianlg meshes,
+reflecting an image from behind the camera, getting a KD tree implemented for ray tracing, rendering to an image file, and lastly 
+capturing depth of field.
+
