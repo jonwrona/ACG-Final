@@ -21,7 +21,7 @@ class Material {
 public:
 
   Material(const std::string &texture_file, const glm::vec3 &d_color,
-	   const glm::vec3 &r_color, const glm::vec3 &e_color, bool transparent_, float ind_of_refract_, float roughness_) {
+	   const glm::vec3 &r_color, const glm::vec3 &e_color, float ind_of_refract_, float roughness_) {
     textureFile = texture_file;
     if (textureFile != "") {
       image = new Image(textureFile);
@@ -32,7 +32,6 @@ public:
     }
     reflectiveColor = r_color;
     emittedColor = e_color;
-    transparent = transparent_;
     ind_of_refract = ind_of_refract_;
     roughness = roughness_;
     // need to initialize texture_id after glut has started
@@ -46,7 +45,6 @@ public:
   const glm::vec3 getDiffuseColor(float s, float t) const;
   const glm::vec3& getReflectiveColor() const { return reflectiveColor; }
   const glm::vec3& getEmittedColor() const { return emittedColor; }
-  bool isTransparent() const { return transparent; }
   float getRefraction() const { return ind_of_refract; }
   float getRoughness() const { return roughness; } 
   bool hasTextureMap() const { return (textureFile != ""); } 

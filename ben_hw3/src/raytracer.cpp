@@ -141,34 +141,59 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     Ray reflected_ray(point,reflected_dir);
     Hit reflection_hit;
     answer += glm::normalize(reflectiveColor) * TraceRay(reflected_ray, reflection_hit, bounce_count-1);
-    RayTree::AddTransmittedSegment(reflected_ray, 0, reflection_hit.getT());
+    RayTree::AddReflectedSegment(reflected_ray, 0, reflection_hit.getT());
   }
 
   // =================================
   // ASSIGNMENT:  ADD REFRACTIVE LOGIC
   // =================================
-  bool transparent = m->isTransparent();
-  if (transparent && bounce_count > 0) {
+  float refraction = m->getRefraction();
+  if (refraction > 0.0 && bounce_count > 0) {
     float air = 1.000277f;
-    float material = m->getRefraction();
     glm::vec3 incident = glm::normalize(ray.getDirection());
 
-    float n = air / material;
-    if (inside) n = material / air;
+    float n = air / refraction;
+    float n1 = air;
+    float n2 = refraction;
+    if (inside) {
+      n = refraction / air;
+      n1 = refraction;
+      n2 = air;
+    }
 
-    glm::vec3 direction;
     float cosI = -1.0f * glm::dot(normal, incident);
     float sinT2 = n * n * (1.0f - cosI * cosI);
-
-    if (sinT2 >= 1.0) {
-      std::cout << sinT2 << std::endl;
+    float reflectivity;
+    if (sinT2 > 1.0f) reflectivity = 1.0f;
+    else {
       float cosT = sqrt(1.0f - sinT2);
-      direction = n * incident + (n * cosI - cosT) * normal;
-      direction = glm::normalize(direction);
-      Ray refractRay = Ray(point, direction);
-      Hit refractHit = Hit();
-      answer += TraceRay(refractRay, refractHit, bounce_count-1, !inside);
-      RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
+      float rOrth = (n1 * cosI - n2 * cosT) / (n1 * cosI + n2 * cosT);
+      float rPar = (n2 * cosI - n1 * cosT) / (n2 * cosI + n1 * cosT);
+      reflectivity = (rOrth * rOrth + rPar + rPar) / 2.0f;
+    }
+    float transitivity = 1.0f - reflectivity;
+    if (transitivity > 0.0) {
+      glm::vec3 direction;
+      float cosI = -1.0f * glm::dot(normal, incident);
+      float sinT2 = n * n * (1.0f - cosI * cosI);
+
+      if (sinT2 < 1.0) {
+        float cosT = sqrt(1.0f - sinT2);
+        direction = n * incident + (n * cosI - cosT) * normal;
+        direction = glm::normalize(direction);
+        Ray refractRay = Ray(point, glm::normalize(direction));
+        Hit refractHit = Hit();
+        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1, !inside);
+        RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
+      }
+    }
+    if (reflectivity > 0.0 && !inside) {
+      float cosI = -1.0f * glm::dot(normal, incident);
+      glm::vec3 direction = incident + 2 * cosI * normal;
+      Ray reflectRay = Ray(point, glm::normalize(direction));
+      Hit reflectHit = Hit();
+      answer += reflectivity * TraceRay(reflectRay, reflectHit, bounce_count-1);
+      RayTree::AddReflectedSegment(reflectRay, 0, reflectHit.getT());
     }
   }
 
