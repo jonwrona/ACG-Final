@@ -10,7 +10,7 @@ emitted 0 0 0
 
 material
 diffuse 0 0 0
-reflective 0.2 0.2 0.2
+reflective 0.04 0.04 0.04
 transparent
 refraction 1.5
 roughness 0.2

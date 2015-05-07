@@ -39,7 +39,7 @@ public:
   bool CastRay(const Ray &ray, Hit &h, bool use_sphere_patches) const;
 
   // does the recursive work
-  glm::vec3 TraceRay(Ray &ray, Hit &hit, int bounce_count = 0, float refraction0=1.000277f, bool inside=false) const;
+  glm::vec3 TraceRay(Ray &ray, Hit &hit, int bounce_count = 0, bool inside = false) const;
 
 private:
 

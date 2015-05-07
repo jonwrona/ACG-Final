@@ -42,7 +42,8 @@ bool RayTracer::CastRay(const Ray &ray, Hit &h, bool use_rasterized_patches) con
 // ===========================================================================
 // does the recursive (shadow rays & recursive rays) work
 // the default index of refraction is set to 1.000277 (air)
-glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refraction0, bool inside) const {
+glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside) const {
+  float refraction0 = 1.000277f;
 
   // First cast a ray and see if we hit anything.
   hit = Hit();
@@ -100,7 +101,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refrac
     for (int j = 0; j < args->num_shadow_samples; j++) {
       glm::vec3 direction = dirToLightCentroid;
       glm::vec3 lightPoint = lightCentroid;
-      if (args->num_shadow_samples > 2) {
+      if (args->num_shadow_samples > 1) {
         // generate random point on light
         lightPoint = f->RandomPoint();
         // get direction towards said point
@@ -111,8 +112,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refrac
 
       CastRay(shadowRay, shadowHit, false);
       bool blocked = shadowHit.getMaterial() != f->getMaterial();
-
-      if (!blocked) {
+      if (!blocked ) {
         float distToLightPoint = glm::length(lightPoint-point);
         myLightColor = lightColor / float(M_PI*distToLightPoint*distToLightPoint);
         if (args->num_shadow_samples > 1) myLightColor /= args->num_shadow_samples;
@@ -131,17 +131,17 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refrac
   glm::vec3 reflectiveColor = m->getReflectiveColor();
 
 
-  // =================================
-  // ASSIGNMENT:  ADD REFLECTIVE LOGIC
-  // =================================
+  // // =================================
+  // // ASSIGNMENT:  ADD REFLECTIVE LOGIC
+  // // =================================
   if (glm::length(reflectiveColor) > 0.001 && !inside) {
-    if (bounce_count > 0) {
-      glm::vec3 direction = ray.getDirection() - 2.0f * (glm::dot(ray.getDirection(), normal) * normal);
-      Ray reflectRay = Ray(point, direction);
-      Hit reflectHit = Hit();
-      answer += reflectiveColor * TraceRay(reflectRay, reflectHit, bounce_count-1);
-      RayTree::AddReflectedSegment(reflectRay, 0, reflectHit.getT());
-    }
+    glm::vec3 ray_dir=ray.getDirection();
+    normal=glm::normalize(normal);
+    glm::vec3 reflected_dir=glm::normalize(ray_dir-2*glm::dot(ray_dir, normal)*normal);
+    //next we trace this ray and get the color reflected onto it
+    Ray reflected_ray(point,reflected_dir);
+    Hit reflection_hit;
+    answer += glm::normalize(reflectiveColor) * TraceRay(reflected_ray, reflection_hit, bounce_count-1);
   }
 
   // =================================
@@ -161,10 +161,11 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refrac
     glm::vec3 direction = (n * ray.getDirection()) + ((n * c0 - c1) * normal);
 
     // refract
+    point = point + 0.00001f * ray.getDirection();
     Ray refractRay = Ray(point, direction);
     Hit refractHit = Hit();
-    if (inside) answer+= TraceRay(refractRay, refractHit, bounce_count-1, refraction0, true);
-    else answer += TraceRay(refractRay, refractHit, bounce_count-1);
+    if (inside) answer+= TraceRay(refractRay, refractHit, bounce_count-1, false);
+    else answer+= TraceRay(refractRay, refractHit, bounce_count-1, true);
   }
 
   
