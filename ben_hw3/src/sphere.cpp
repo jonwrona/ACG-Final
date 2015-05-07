@@ -38,7 +38,7 @@ bool Sphere::intersect(const Ray &r, Hit &h) const {
     if (solution<0){
       solution = (-b+discriminant)/(2.0*a);
     }
-    if (solution>0.0001){
+    if (solution>0.001){
       //now that we know when the collision occurs, we must calulate the normal
       glm::vec3 collision_location=r.getOrigin();
       glm::vec3 tmp = r.getDirection();
