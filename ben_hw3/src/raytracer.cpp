@@ -42,7 +42,7 @@ bool RayTracer::CastRay(const Ray &ray, Hit &h, bool use_rasterized_patches) con
 // ===========================================================================
 // does the recursive (shadow rays & recursive rays) work
 // the default index of refraction is set to 1.000277 (air)
-glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refraction0) const {
+glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refraction0, bool inside) const {
 
   // First cast a ray and see if we hit anything.
   hit = Hit();
@@ -134,29 +134,37 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, float refrac
   // =================================
   // ASSIGNMENT:  ADD REFLECTIVE LOGIC
   // =================================
-  if (reflectiveColor == glm::vec3(0,0,0)) return answer;
-  
-  if (bounce_count > 0) {
-    glm::vec3 direction = ray.getDirection() - 2.0f * (glm::dot(ray.getDirection(), normal) * normal);
-    Ray reflectRay = Ray(point, direction);
-    Hit reflectHit = Hit();
-    answer += reflectiveColor * TraceRay(reflectRay, reflectHit, bounce_count-1);
-    RayTree::AddReflectedSegment(reflectRay, 0, reflectHit.getT());
+  if (glm::length(reflectiveColor) > 0.001 && !inside) {
+    if (bounce_count > 0) {
+      glm::vec3 direction = ray.getDirection() - 2.0f * (glm::dot(ray.getDirection(), normal) * normal);
+      Ray reflectRay = Ray(point, direction);
+      Hit reflectHit = Hit();
+      answer += reflectiveColor * TraceRay(reflectRay, reflectHit, bounce_count-1);
+      RayTree::AddReflectedSegment(reflectRay, 0, reflectHit.getT());
+    }
   }
 
   // =================================
   // ASSIGNMENT:  ADD REFRACTIVE LOGIC
   // =================================
   bool transparent = m->isTransparent();
-  float refraction1 = m->getRefraction();
-  if (transparent) {
+  if (transparent && bounce_count > 0) {
+    float refraction1 = m->getRefraction();
+    // find direction of refraction
     float n = refraction0 / refraction1;
+    if (inside) {
+      n = refraction1 / refraction0;
+      normal = -1.0f * normal;
+    } 
     float c0 = glm::dot(ray.getDirection(), normal);
     float c1 = sqrt(1.0 - pow(n, 2.0) * (1.0 - pow(c0, 2.0)));
     glm::vec3 direction = (n * ray.getDirection()) + ((n * c0 - c1) * normal);
+
+    // refract
     Ray refractRay = Ray(point, direction);
     Hit refractHit = Hit();
-    answer += TraceRay(refractRay, refractHit);
+    if (inside) answer+= TraceRay(refractRay, refractHit, bounce_count-1, refraction0, true);
+    else answer += TraceRay(refractRay, refractHit, bounce_count-1);
   }
 
   
