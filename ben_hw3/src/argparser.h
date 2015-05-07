@@ -112,12 +112,36 @@ public:
       } else if (std::string(argv[i]) == std::string("-num_photons_to_shoot")) {
 	i++; assert (i < argc);
 	num_photons_to_shoot = atoi(argv[i]);
-      } else if (std::string(argv[i]) == std::string("-num_photons_to_collect")) {
+      } else if (std::string(argv[i]) == std::string("-milk")) {
+  nu=1.f/1.3f;
+  sigma_s_prime=glm::vec3(2.55f, 3.21f, 3.77f);
+  sigma_a=glm::vec3(0.0011f, 0.0024f, 0.014f);
+  sigma_t_prime = sigma_s_prime+sigma_a;
+  Fdr = -1.440/(nu*nu)+0.710/nu+0.668+0.0636*nu;
+  
+      }
+       else if (std::string(argv[i]) == std::string("-skim_milk")) {
+  nu=1.f/1.3f;
+  sigma_s_prime=2.f*glm::vec3(0.70f, 1.22f, 1.90f);
+  sigma_a=glm::vec3(0.0014f, 0.0025f, 0.00142f);
+  sigma_t_prime = sigma_s_prime+sigma_a;
+  Fdr = -1.440/(nu*nu)+0.710/nu+0.668+0.0636*nu;
+ 
+      }
+      else if (std::string(argv[i]) == std::string("-num_photons_to_collect")) {
 	i++; assert (i < argc);
 	num_photons_to_collect = atoi(argv[i]);
       } else if (std::string(argv[i]) == std::string("-gather_indirect")) {
 	gather_indirect = true;
-      } else {
+}
+        else if (std::string(argv[i])==std::string("-ss_scatter")){
+  ss_scatter = true;
+        
+      } 
+      else if (std::string(argv[i]) == std::string("-num_ss_samples")) {
+  i++; assert (i < argc);
+  num_ss_samples = atoi(argv[i]);
+} else {
 	printf ("whoops error with command line argument %d: '%s'\n",i,argv[i]);
 	assert(0);
       }
@@ -149,6 +173,20 @@ public:
     num_glossy_samples = 1;
     ambient_light = glm::vec3(0.1,0.1,0.1);
     intersect_backfacing = false;
+    ss_scatter = false;
+
+    //subsurface scattering parameters. They are set to marble for now
+    num_ss_samples=4;
+    sigma_s_prime = glm::vec3(2.19, 2.62, 3.00);
+    sigma_a = glm::vec3(0.0021, 0.0041, 0.0071);
+    sigma_t_prime = sigma_s_prime+sigma_a;
+    albedo=0.5;
+
+    
+
+    nu = .67;
+    Fdr = -1.440/(nu*nu)+0.710/nu+0.668+0.0636*nu;
+
 
     // PHOTON MAPPING PARAMETERS
     render_photons = true;
@@ -190,6 +228,17 @@ public:
   int num_glossy_samples;
   glm::vec3 ambient_light;
   bool intersect_backfacing;
+  bool ss_scatter;
+
+  //subsurface scattering parameters
+  int num_ss_samples;
+  glm::vec3 sigma_s_prime;
+  glm::vec3 sigma_a;
+  glm::vec3 sigma_t_prime;
+  glm::vec3 sigma_tr;  
+  float nu;
+  float Fdr;
+  float albedo;
 
   // PHOTON MAPPING PARAMETERS
   int num_photons_to_shoot;
