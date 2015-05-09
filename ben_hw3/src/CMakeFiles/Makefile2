@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ben/Documents/ACG/hw3/src
+CMAKE_SOURCE_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ben/Documents/ACG/hw3/src
+CMAKE_BINARY_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/src
 
 #=============================================================================
 # Target rules for target CMakeFiles/render.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/ben/Documents/ACG/hw3/src
 CMakeFiles/render.dir/all:
 	$(MAKE) -f CMakeFiles/render.dir/build.make CMakeFiles/render.dir/depend
 	$(MAKE) -f CMakeFiles/render.dir/build.make CMakeFiles/render.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/hw3/src/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 	@echo "Built target render"
 .PHONY : CMakeFiles/render.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/render.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/render.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/hw3/src/CMakeFiles 18
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles 18
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/render.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/hw3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles 0
 .PHONY : CMakeFiles/render.dir/rule
 
 # Convenience name for target.

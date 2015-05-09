@@ -55,6 +55,8 @@ CMakeFiles/render.dir/face.cpp.o: /usr/local/include/GLFW/glfw3.h
 CMakeFiles/render.dir/glCanvas.cpp.o: argparser.h
 CMakeFiles/render.dir/glCanvas.cpp.o: boundingbox.h
 CMakeFiles/render.dir/glCanvas.cpp.o: camera.h
+CMakeFiles/render.dir/glCanvas.cpp.o: edge.h
+CMakeFiles/render.dir/glCanvas.cpp.o: face.h
 CMakeFiles/render.dir/glCanvas.cpp.o: glCanvas.cpp
 CMakeFiles/render.dir/glCanvas.cpp.o: glCanvas.h
 CMakeFiles/render.dir/glCanvas.cpp.o: hash.h

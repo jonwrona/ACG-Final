@@ -351,3 +351,183 @@ Linking C executable cmTryCompileExec2842313843
 make[1]: Leaving directory `/home/ben/Documents/ACG/hw3/src/CMakeFiles/CMakeTmp'
 
 
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec577015996/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec577015996.dir/build.make CMakeFiles/cmTryCompileExec577015996.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec577015996.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec577015996.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec577015996
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec577015996.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec577015996.dir/CheckFunctionExists.c.o  -o cmTryCompileExec577015996 -rdynamic -lX11 -lXext 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec935130261/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec935130261.dir/build.make CMakeFiles/cmTryCompileExec935130261.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec935130261.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec935130261.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec935130261
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec935130261.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec935130261.dir/CheckFunctionExists.c.o  -o cmTryCompileExec935130261 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3309940274/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3309940274.dir/build.make CMakeFiles/cmTryCompileExec3309940274.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3309940274.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3309940274.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3309940274
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3309940274.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3309940274.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3309940274 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3000943033/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3000943033.dir/build.make CMakeFiles/cmTryCompileExec3000943033.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3000943033.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec3000943033.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3000943033
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3000943033.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec3000943033.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3000943033 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1843828400/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1843828400.dir/build.make CMakeFiles/cmTryCompileExec1843828400.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1843828400.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec1843828400.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1843828400
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1843828400.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec1843828400.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1843828400 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4203063730/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4203063730.dir/build.make CMakeFiles/cmTryCompileExec4203063730.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4203063730.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec4203063730.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec4203063730
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4203063730.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec4203063730.dir/CheckFunctionExists.c.o  -o cmTryCompileExec4203063730 -rdynamic -lICE 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec491485806/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec491485806.dir/build.make CMakeFiles/cmTryCompileExec491485806.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec491485806.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTryCompileExec491485806.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec491485806
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec491485806.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay    CMakeFiles/cmTryCompileExec491485806.dir/CheckFunctionExists.c.o  -o cmTryCompileExec491485806 -rdynamic -lX11 -lXext 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec1130394340/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1130394340.dir/build.make CMakeFiles/cmTryCompileExec1130394340.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec1130394340.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTryCompileExec1130394340.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec1130394340
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec1130394340.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname    CMakeFiles/cmTryCompileExec1130394340.dir/CheckFunctionExists.c.o  -o cmTryCompileExec1130394340 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3214905384/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3214905384.dir/build.make CMakeFiles/cmTryCompileExec3214905384.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3214905384.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTryCompileExec3214905384.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3214905384
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3214905384.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=connect    CMakeFiles/cmTryCompileExec3214905384.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3214905384 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3122797563/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3122797563.dir/build.make CMakeFiles/cmTryCompileExec3122797563.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3122797563.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTryCompileExec3122797563.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3122797563
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3122797563.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=remove    CMakeFiles/cmTryCompileExec3122797563.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3122797563 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec342698477/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec342698477.dir/build.make CMakeFiles/cmTryCompileExec342698477.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec342698477.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTryCompileExec342698477.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec342698477
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec342698477.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=shmat    CMakeFiles/cmTryCompileExec342698477.dir/CheckFunctionExists.c.o  -o cmTryCompileExec342698477 -rdynamic 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2154222808/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2154222808.dir/build.make CMakeFiles/cmTryCompileExec2154222808.dir/build
+make[1]: Entering directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec2154222808.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTryCompileExec2154222808.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec2154222808
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2154222808.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    CMakeFiles/cmTryCompileExec2154222808.dir/CheckFunctionExists.c.o  -o cmTryCompileExec2154222808 -rdynamic -lICE 
+make[1]: Leaving directory `/home/ben/Documents/ACG/ACG-Final/ben_hw3/src/CMakeFiles/CMakeTmp'
+
+

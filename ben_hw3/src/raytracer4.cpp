@@ -79,7 +79,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     //diff_answer is the diffusion term
     int count_diff=0;
 
-    #if 1
+    #if 0
     //first we sample for the diffusion term. This follows
     for (int i=0; i<args->num_ss_samples; i++){
       //first compute the coefficents we need
@@ -94,9 +94,9 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       glm::vec3 tang=glm::normalize(glm::normalize(wo_)+no*(float)(sin(1.57079632679-acos(glm::dot(wo, no)))));
       float rand_dist=-sigma_tr*(float)log(GLOBAL_MTRAND()/sigma_tr)*.1f;
       //std::cout<<glm::length(rand_dist)<<std::endl;
-      std::cout<<glm::dot(no, tang)<<std::endl;
+      //std::cout<<glm::dot(no, tang);
       xi=xo+tang*rand_dist; //NEED TO CHANGE THIS
-      Ray r_find(xi, no);
+      Ray r_find(xi, -no);
       Hit h_find, h_find2;
       //this is the direction to the surface
       glm::vec3 surface_dir;
@@ -104,21 +104,18 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       CastRay(r_find, h_find, false);
       surface_dir=no;
 
-      //std::cout<<rand_dist<<std::endl;  
-      #if 0
-      if (! glm::length(h_find.getMaterial()->getReflectiveColor())>0.1){
+      if (h_find.getT()>0.2*rand_dist){
         //we went the wrong way
         //std::cout<<"Wrong way"<<std::endl;
         Ray r_find2(xi, no);
         CastRay(r_find, h_find2, false);
         surface_dir=-no;
       }
-      if(h_find2.getT()>rand_dist){
+      if(h_find2.getT()>0.2f*rand_dist){
         //if we are here we did not find the surface
         std::cout<<"we did not find the surface\n";
         continue;
       }
-      #endif
       //std::cout<<"yay\n";
       //set xi and ni
       //std::cout<<h_find.getT()<<std::endl;
@@ -172,7 +169,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     #endif
     //std::cout<<count_diff<<std::endl;
 
-    #if 0
+    #if 1
     //next we sample for the single scattering term. This follows
     for (int i=0; i<args->num_ss_samples; i++){
 
@@ -223,7 +220,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       //std::cout<<"Li is:";
       //print_vec(Li);
       float FresnelTerm=Fresnel_transmittance(1.f/nu, glm::normalize(lightPos-xi), -ni)*Fresnel_transmittance(nu, -wo_prime, no);
-      //std::cout<<FresnelTerm<<std::endl;
+      std::cout<<FresnelTerm<<std::endl;
       glm::vec3 Lo=sigma_s*FresnelTerm/sigma_tc*(float)pow(e, -si_prime*sigma_t)*(float)pow(e, -so_prime)*Li;
       //std::cout<<"Lo is:";
       //print_vec(Lo);
@@ -242,7 +239,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     if(j==1){
       //std::cout<<"Count was "<<count<<std::endl;
     }
-    //count++;
+    count++;
     pseudo_answer/=(float)count;
     answer+=pseudo_answer;
     //answer+=pseudo_answer_diff;
@@ -419,7 +416,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
       #endif
       #if 1
       glm::vec3 tmp = ss_scatter(hit, point, lightCentroid, ray.getDirection(), lightColor, f);
-      //print_vec(tmp);
+      print_vec(tmp);
       return tmp;
       #endif
     }

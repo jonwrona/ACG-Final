@@ -15,7 +15,7 @@ void print_vec(const glm::vec3 &a){
   std::cout<<a.x<<" "<<a.y<<" "<<a.z<<std::endl;
 }
 
- //hit is the hit data from the 'eye ray'. xo is the position. wo_ is the direction this was hit a, but we negate it.
+ //hit is the hit data from the 'eye ray'. xo is the position. wo is the direction this was hit a, but we negate it.
 glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::vec3 lightPos_,const glm::vec3 wo_,const glm::vec3 lightColor_, const Face* f) const{
   //set all the constants
   //print_vec(args->sigma_s_prime);
@@ -78,47 +78,39 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
 
     //diff_answer is the diffusion term
     int count_diff=0;
-
-    #if 1
     //first we sample for the diffusion term. This follows
     for (int i=0; i<args->num_ss_samples; i++){
       //first compute the coefficents we need
       float A=(1.f-args->Fdr)/(1.f+args->Fdr);
       float D=1.f/(3.f*sigma_t);
-      float sigma_tr = glm::sqrt((double)(3.f*sigma_a*sigma_t));  
+      float sigma_tr = glm::sqrt((double)(3.0*sigma_a*sigma_t));  
       
       //calculate xi
       glm::vec3 xi;
 
       //tang is the unit vector in the direction of the eye ray hit that is tangent to the surface
-      glm::vec3 tang=glm::normalize(glm::normalize(wo_)+no*(float)(sin(1.57079632679-acos(glm::dot(wo, no)))));
-      float rand_dist=-sigma_tr*(float)log(GLOBAL_MTRAND()/sigma_tr)*.1f;
-      //std::cout<<glm::length(rand_dist)<<std::endl;
-      std::cout<<glm::dot(no, tang)<<std::endl;
+      glm::vec3 tang=glm::normalize(glm::normalize(wo_)+no*(float)(cos(1.57079632679-acos(glm::dot(wo, no)))));
+      float rand_dist=-sigma_tr*(float)log(GLOBAL_MTRAND()/sigma_tr);
       xi=xo+tang*rand_dist; //NEED TO CHANGE THIS
       Ray r_find(xi, no);
-      Hit h_find, h_find2;
+      Hit h_find;
       //this is the direction to the surface
       glm::vec3 surface_dir;
       //find the surface
       CastRay(r_find, h_find, false);
       surface_dir=no;
-
-      //std::cout<<rand_dist<<std::endl;  
-      #if 0
-      if (! glm::length(h_find.getMaterial()->getReflectiveColor())>0.1){
+      if (h_find.getT()>0.1*rand_dist){
         //we went the wrong way
         //std::cout<<"Wrong way"<<std::endl;
-        Ray r_find2(xi, no);
-        CastRay(r_find, h_find2, false);
+        Ray r_find2(xi, -no);
+        CastRay(r_find, h_find, false);
         surface_dir=-no;
       }
-      if(h_find2.getT()>rand_dist){
+      if(h_find.getT()>0.1){
         //if we are here we did not find the surface
-        std::cout<<"we did not find the surface\n";
+        //std::cout<<"we did not find the surface\n";
         continue;
       }
-      #endif
       //std::cout<<"yay\n";
       //set xi and ni
       //std::cout<<h_find.getT()<<std::endl;
@@ -147,8 +139,6 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
 
       //determine the contribution
       float Rd=albedo/(12.5663706144)*((sigma_tr*dr+1.f)* ((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr)) + ( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) )) );
-      std::cout<<"Term 1 is "<<(sigma_tr*dr+1.f)<<" term 2 is "<<((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr))<<std::endl;
-      std::cout<<"and term 3 is "<<( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) ))<<std::endl;
       glm::vec3 wi=lightPos_-xi;
       float Fo=Fresnel_transmittance(nu, wo_, no);
       float Fi=Fresnel_transmittance(1.f/nu, wi, -ni);
@@ -162,14 +152,9 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
           count_diff+=1;
         }
       }
-      else{
-        std::cout<<"We got a nan..."<<std::endl;
-      }
     }
-    
     count_diff+=1;
     pseudo_answer_diff/=(float)count_diff;
-    #endif
     //std::cout<<count_diff<<std::endl;
 
     #if 0
@@ -193,7 +178,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       Hit surface_hit;
       CastRay(r_inside, surface_hit, false);
       //if we did not manage to pass back through the surface the contribution is 0
-      if(fabs(surface_hit.getT()-glm::length(lightPos-xInside))<0.00001){
+      if(fabs(surface_hit.getT()-glm::length(lightPos-xInside))<0.000001){
         //answer+=glm::vec3(0.0,0.0,0.0);
         count+=1;
         continue;
@@ -222,8 +207,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       //Li*=5.0;
       //std::cout<<"Li is:";
       //print_vec(Li);
-      float FresnelTerm=Fresnel_transmittance(1.f/nu, glm::normalize(lightPos-xi), -ni)*Fresnel_transmittance(nu, -wo_prime, no);
-      //std::cout<<FresnelTerm<<std::endl;
+      float FresnelTerm=Fresnel_transmittance(nu, -glm::normalize(lightPos-xi), ni)*Fresnel_transmittance(nu, -glm::normalize(lightPos-xo), no);
       glm::vec3 Lo=sigma_s*FresnelTerm/sigma_tc*(float)pow(e, -si_prime*sigma_t)*(float)pow(e, -so_prime)*Li;
       //std::cout<<"Lo is:";
       //print_vec(Lo);
@@ -242,10 +226,10 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     if(j==1){
       //std::cout<<"Count was "<<count<<std::endl;
     }
-    //count++;
+    count++;
     pseudo_answer/=(float)count;
     answer+=pseudo_answer;
-    //answer+=pseudo_answer_diff;
+    answer+=pseudo_answer_diff;
   }
 
   //average answer out
@@ -254,7 +238,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
   //std::cout<<"answer is ";
   //print_vec(answer);
 
-  return answer;
+  return answer/;
 
 }
 
@@ -311,7 +295,7 @@ float RayTracer::Fresnel_transmittance(const float &nu, const glm::vec3 &w_, con
   float R=(Rs+Rp)/2.f;
   float T;
   if (R>1.f){
-    T=0.f;
+    T=0;
   }
   else{
     T=1.f-R;
