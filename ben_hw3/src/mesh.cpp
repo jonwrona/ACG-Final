@@ -254,7 +254,6 @@ void Mesh::Load(ArgParser *_args) {
       assert (token == "reflective");
       reflective = glm::vec3(r,g,b);
       float roughness = 0;
-      bool transparent = false;
       float ind_of_refract = 0.0;
       objfile >> token;
       if (token == "refraction") {
