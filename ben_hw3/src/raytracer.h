@@ -5,6 +5,7 @@
 #include <vector>
 #include "ray.h"
 #include "hit.h"
+#include "face.h"
 #include "vbo_structs.h"
 
 class Mesh;
@@ -34,15 +35,16 @@ public:
   void setupVBOs(); 
   void drawVBOs();
   void cleanupVBOs();
-
-  glm::vec3 ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::vec3 lightPos_,const glm::vec3 wo_,const glm::vec3 lightColor_, const Face* f) const;
-  float Fresnel_transmittance(const float &nu, const glm::vec3 &w_, const glm::vec3 &n1_) const;
-
+  
   // casts a single ray through the scene geometry and finds the closest hit
   bool CastRay(const Ray &ray, Hit &h, bool use_sphere_patches) const;
 
   // does the recursive work
   glm::vec3 TraceRay(Ray &ray, Hit &hit, int bounce_count = 0, bool inside = false) const;
+
+  //add my new functions here
+  float Fresnel_transmittance(const float &nu, const glm::vec3 &w, const glm::vec3 &n1) const;
+  glm::vec3 ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::vec3 lightPos_,const glm::vec3 wo_,const glm::vec3 lightColor_,const Face* f) const;
 
 private:
 

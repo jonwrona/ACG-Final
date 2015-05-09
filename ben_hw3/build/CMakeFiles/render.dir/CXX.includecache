@@ -173,6 +173,8 @@ ray.h
 /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/ray.h
 hit.h
 /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/hit.h
+face.h
+/home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.h
 vbo_structs.h
 /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/vbo_structs.h
 

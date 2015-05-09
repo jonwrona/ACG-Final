@@ -454,6 +454,8 @@ CMakeFiles/render.dir/glCanvas.cpp.o
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/argparser.h
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.h
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.h
+ /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.h
+ /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.h
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.h
  /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/hash.h

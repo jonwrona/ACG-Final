@@ -122,12 +122,13 @@ public:
       }
        else if (std::string(argv[i]) == std::string("-skim_milk")) {
   nu=1.f/1.3f;
-  sigma_s_prime=2.f*glm::vec3(0.70f, 1.22f, 1.90f);
-  sigma_a=glm::vec3(0.0014f, 0.0025f, 0.00142f);
+  sigma_s_prime=glm::vec3(2.29f, 2.39f, 1.97f);
+  sigma_a=glm::vec3(0.0030f, 0.0034f, 0.0046f);
   sigma_t_prime = sigma_s_prime+sigma_a;
   Fdr = -1.440/(nu*nu)+0.710/nu+0.668+0.0636*nu;
  
       }
+
       else if (std::string(argv[i]) == std::string("-num_photons_to_collect")) {
 	i++; assert (i < argc);
 	num_photons_to_collect = atoi(argv[i]);

@@ -453,6 +453,8 @@ CMakeFiles/render.dir/face.cpp.o: /usr/local/include/glm/vector_relational.hpp
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/argparser.h
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.h
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.h
+CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.h
+CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.h
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.h
 CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/hash.h
