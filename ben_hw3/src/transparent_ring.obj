@@ -10,7 +10,7 @@ emitted 0 0 0
 
 material 
 diffuse 0 0 0
-reflective 0 0 0
+reflective 1 0 0
 refraction 1.75
 emitted 0 0 0
 
