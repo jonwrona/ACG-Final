@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src
+CMAKE_SOURCE_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build
+CMAKE_BINARY_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/render.dir/depend.make
@@ -50,18 +50,18 @@ include CMakeFiles/render.dir/progress.make
 include CMakeFiles/render.dir/flags.make
 
 CMakeFiles/render.dir/main.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/main.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/render.dir/main.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/main.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/main.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/main.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/main.cpp
 
 CMakeFiles/render.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/main.cpp > CMakeFiles/render.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/main.cpp > CMakeFiles/render.dir/main.cpp.i
 
 CMakeFiles/render.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/main.cpp -o CMakeFiles/render.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/main.cpp -o CMakeFiles/render.dir/main.cpp.s
 
 CMakeFiles/render.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/main.cpp.o.requires
@@ -73,18 +73,18 @@ CMakeFiles/render.dir/main.cpp.o.provides: CMakeFiles/render.dir/main.cpp.o.requ
 CMakeFiles/render.dir/main.cpp.o.provides.build: CMakeFiles/render.dir/main.cpp.o
 
 CMakeFiles/render.dir/camera.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/camera.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_2)
+CMakeFiles/render.dir/camera.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/camera.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/camera.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/camera.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/camera.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/camera.cpp
 
 CMakeFiles/render.dir/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/camera.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.cpp > CMakeFiles/render.dir/camera.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/camera.cpp > CMakeFiles/render.dir/camera.cpp.i
 
 CMakeFiles/render.dir/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/camera.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/camera.cpp -o CMakeFiles/render.dir/camera.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/camera.cpp -o CMakeFiles/render.dir/camera.cpp.s
 
 CMakeFiles/render.dir/camera.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/camera.cpp.o.requires
@@ -96,18 +96,18 @@ CMakeFiles/render.dir/camera.cpp.o.provides: CMakeFiles/render.dir/camera.cpp.o.
 CMakeFiles/render.dir/camera.cpp.o.provides.build: CMakeFiles/render.dir/camera.cpp.o
 
 CMakeFiles/render.dir/glCanvas.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/glCanvas.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_3)
+CMakeFiles/render.dir/glCanvas.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/glCanvas.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/glCanvas.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/glCanvas.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/glCanvas.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/glCanvas.cpp
 
 CMakeFiles/render.dir/glCanvas.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/glCanvas.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp > CMakeFiles/render.dir/glCanvas.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/glCanvas.cpp > CMakeFiles/render.dir/glCanvas.cpp.i
 
 CMakeFiles/render.dir/glCanvas.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/glCanvas.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/glCanvas.cpp -o CMakeFiles/render.dir/glCanvas.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/glCanvas.cpp -o CMakeFiles/render.dir/glCanvas.cpp.s
 
 CMakeFiles/render.dir/glCanvas.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/glCanvas.cpp.o.requires
@@ -119,18 +119,18 @@ CMakeFiles/render.dir/glCanvas.cpp.o.provides: CMakeFiles/render.dir/glCanvas.cp
 CMakeFiles/render.dir/glCanvas.cpp.o.provides.build: CMakeFiles/render.dir/glCanvas.cpp.o
 
 CMakeFiles/render.dir/mesh.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/mesh.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mesh.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_4)
+CMakeFiles/render.dir/mesh.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mesh.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/mesh.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/mesh.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mesh.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/mesh.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mesh.cpp
 
 CMakeFiles/render.dir/mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/mesh.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mesh.cpp > CMakeFiles/render.dir/mesh.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mesh.cpp > CMakeFiles/render.dir/mesh.cpp.i
 
 CMakeFiles/render.dir/mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/mesh.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mesh.cpp -o CMakeFiles/render.dir/mesh.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mesh.cpp -o CMakeFiles/render.dir/mesh.cpp.s
 
 CMakeFiles/render.dir/mesh.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/mesh.cpp.o.requires
@@ -142,18 +142,18 @@ CMakeFiles/render.dir/mesh.cpp.o.provides: CMakeFiles/render.dir/mesh.cpp.o.requ
 CMakeFiles/render.dir/mesh.cpp.o.provides.build: CMakeFiles/render.dir/mesh.cpp.o
 
 CMakeFiles/render.dir/edge.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/edge.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_5)
+CMakeFiles/render.dir/edge.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/edge.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/edge.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/edge.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/edge.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/edge.cpp
 
 CMakeFiles/render.dir/edge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/edge.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.cpp > CMakeFiles/render.dir/edge.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/edge.cpp > CMakeFiles/render.dir/edge.cpp.i
 
 CMakeFiles/render.dir/edge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/edge.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/edge.cpp -o CMakeFiles/render.dir/edge.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/edge.cpp -o CMakeFiles/render.dir/edge.cpp.s
 
 CMakeFiles/render.dir/edge.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/edge.cpp.o.requires
@@ -165,18 +165,18 @@ CMakeFiles/render.dir/edge.cpp.o.provides: CMakeFiles/render.dir/edge.cpp.o.requ
 CMakeFiles/render.dir/edge.cpp.o.provides.build: CMakeFiles/render.dir/edge.cpp.o
 
 CMakeFiles/render.dir/radiosity.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/radiosity.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/radiosity.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_6)
+CMakeFiles/render.dir/radiosity.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/radiosity.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/radiosity.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/radiosity.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/radiosity.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/radiosity.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/radiosity.cpp
 
 CMakeFiles/render.dir/radiosity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/radiosity.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/radiosity.cpp > CMakeFiles/render.dir/radiosity.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/radiosity.cpp > CMakeFiles/render.dir/radiosity.cpp.i
 
 CMakeFiles/render.dir/radiosity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/radiosity.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/radiosity.cpp -o CMakeFiles/render.dir/radiosity.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/radiosity.cpp -o CMakeFiles/render.dir/radiosity.cpp.s
 
 CMakeFiles/render.dir/radiosity.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/radiosity.cpp.o.requires
@@ -188,18 +188,18 @@ CMakeFiles/render.dir/radiosity.cpp.o.provides: CMakeFiles/render.dir/radiosity.
 CMakeFiles/render.dir/radiosity.cpp.o.provides.build: CMakeFiles/render.dir/radiosity.cpp.o
 
 CMakeFiles/render.dir/face.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/face.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_7)
+CMakeFiles/render.dir/face.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/face.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/face.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/face.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/face.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/face.cpp
 
 CMakeFiles/render.dir/face.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/face.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.cpp > CMakeFiles/render.dir/face.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/face.cpp > CMakeFiles/render.dir/face.cpp.i
 
 CMakeFiles/render.dir/face.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/face.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/face.cpp -o CMakeFiles/render.dir/face.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/face.cpp -o CMakeFiles/render.dir/face.cpp.s
 
 CMakeFiles/render.dir/face.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/face.cpp.o.requires
@@ -211,18 +211,18 @@ CMakeFiles/render.dir/face.cpp.o.provides: CMakeFiles/render.dir/face.cpp.o.requ
 CMakeFiles/render.dir/face.cpp.o.provides.build: CMakeFiles/render.dir/face.cpp.o
 
 CMakeFiles/render.dir/raytree.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/raytree.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytree.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_8)
+CMakeFiles/render.dir/raytree.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytree.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/raytree.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/raytree.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytree.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/raytree.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytree.cpp
 
 CMakeFiles/render.dir/raytree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/raytree.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytree.cpp > CMakeFiles/render.dir/raytree.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytree.cpp > CMakeFiles/render.dir/raytree.cpp.i
 
 CMakeFiles/render.dir/raytree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/raytree.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytree.cpp -o CMakeFiles/render.dir/raytree.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytree.cpp -o CMakeFiles/render.dir/raytree.cpp.s
 
 CMakeFiles/render.dir/raytree.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/raytree.cpp.o.requires
@@ -234,18 +234,18 @@ CMakeFiles/render.dir/raytree.cpp.o.provides: CMakeFiles/render.dir/raytree.cpp.
 CMakeFiles/render.dir/raytree.cpp.o.provides.build: CMakeFiles/render.dir/raytree.cpp.o
 
 CMakeFiles/render.dir/raytracer.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/raytracer.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytracer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_9)
+CMakeFiles/render.dir/raytracer.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytracer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/raytracer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/raytracer.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytracer.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/raytracer.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytracer.cpp
 
 CMakeFiles/render.dir/raytracer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/raytracer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytracer.cpp > CMakeFiles/render.dir/raytracer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytracer.cpp > CMakeFiles/render.dir/raytracer.cpp.i
 
 CMakeFiles/render.dir/raytracer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/raytracer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/raytracer.cpp -o CMakeFiles/render.dir/raytracer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/raytracer.cpp -o CMakeFiles/render.dir/raytracer.cpp.s
 
 CMakeFiles/render.dir/raytracer.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/raytracer.cpp.o.requires
@@ -257,18 +257,18 @@ CMakeFiles/render.dir/raytracer.cpp.o.provides: CMakeFiles/render.dir/raytracer.
 CMakeFiles/render.dir/raytracer.cpp.o.provides.build: CMakeFiles/render.dir/raytracer.cpp.o
 
 CMakeFiles/render.dir/sphere.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/sphere.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/sphere.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_10)
+CMakeFiles/render.dir/sphere.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/sphere.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/sphere.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/sphere.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/sphere.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/sphere.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/sphere.cpp
 
 CMakeFiles/render.dir/sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/sphere.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/sphere.cpp > CMakeFiles/render.dir/sphere.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/sphere.cpp > CMakeFiles/render.dir/sphere.cpp.i
 
 CMakeFiles/render.dir/sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/sphere.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/sphere.cpp -o CMakeFiles/render.dir/sphere.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/sphere.cpp -o CMakeFiles/render.dir/sphere.cpp.s
 
 CMakeFiles/render.dir/sphere.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/sphere.cpp.o.requires
@@ -280,18 +280,18 @@ CMakeFiles/render.dir/sphere.cpp.o.provides: CMakeFiles/render.dir/sphere.cpp.o.
 CMakeFiles/render.dir/sphere.cpp.o.provides.build: CMakeFiles/render.dir/sphere.cpp.o
 
 CMakeFiles/render.dir/cylinder_ring.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/cylinder_ring.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/cylinder_ring.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_11)
+CMakeFiles/render.dir/cylinder_ring.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/cylinder_ring.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/cylinder_ring.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/cylinder_ring.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/cylinder_ring.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/cylinder_ring.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/cylinder_ring.cpp
 
 CMakeFiles/render.dir/cylinder_ring.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/cylinder_ring.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/cylinder_ring.cpp > CMakeFiles/render.dir/cylinder_ring.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/cylinder_ring.cpp > CMakeFiles/render.dir/cylinder_ring.cpp.i
 
 CMakeFiles/render.dir/cylinder_ring.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/cylinder_ring.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/cylinder_ring.cpp -o CMakeFiles/render.dir/cylinder_ring.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/cylinder_ring.cpp -o CMakeFiles/render.dir/cylinder_ring.cpp.s
 
 CMakeFiles/render.dir/cylinder_ring.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/cylinder_ring.cpp.o.requires
@@ -303,18 +303,18 @@ CMakeFiles/render.dir/cylinder_ring.cpp.o.provides: CMakeFiles/render.dir/cylind
 CMakeFiles/render.dir/cylinder_ring.cpp.o.provides.build: CMakeFiles/render.dir/cylinder_ring.cpp.o
 
 CMakeFiles/render.dir/material.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/material.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/material.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_12)
+CMakeFiles/render.dir/material.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/material.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/material.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/material.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/material.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/material.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/material.cpp
 
 CMakeFiles/render.dir/material.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/material.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/material.cpp > CMakeFiles/render.dir/material.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/material.cpp > CMakeFiles/render.dir/material.cpp.i
 
 CMakeFiles/render.dir/material.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/material.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/material.cpp -o CMakeFiles/render.dir/material.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/material.cpp -o CMakeFiles/render.dir/material.cpp.s
 
 CMakeFiles/render.dir/material.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/material.cpp.o.requires
@@ -326,18 +326,18 @@ CMakeFiles/render.dir/material.cpp.o.provides: CMakeFiles/render.dir/material.cp
 CMakeFiles/render.dir/material.cpp.o.provides.build: CMakeFiles/render.dir/material.cpp.o
 
 CMakeFiles/render.dir/image.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/image.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/image.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_13)
+CMakeFiles/render.dir/image.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/image.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/image.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/image.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/image.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/image.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/image.cpp
 
 CMakeFiles/render.dir/image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/image.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/image.cpp > CMakeFiles/render.dir/image.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/image.cpp > CMakeFiles/render.dir/image.cpp.i
 
 CMakeFiles/render.dir/image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/image.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/image.cpp -o CMakeFiles/render.dir/image.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/image.cpp -o CMakeFiles/render.dir/image.cpp.s
 
 CMakeFiles/render.dir/image.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/image.cpp.o.requires
@@ -349,18 +349,18 @@ CMakeFiles/render.dir/image.cpp.o.provides: CMakeFiles/render.dir/image.cpp.o.re
 CMakeFiles/render.dir/image.cpp.o.provides.build: CMakeFiles/render.dir/image.cpp.o
 
 CMakeFiles/render.dir/photon_mapping.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/photon_mapping.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/photon_mapping.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_14)
+CMakeFiles/render.dir/photon_mapping.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/photon_mapping.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/photon_mapping.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/photon_mapping.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/photon_mapping.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/photon_mapping.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/photon_mapping.cpp
 
 CMakeFiles/render.dir/photon_mapping.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/photon_mapping.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/photon_mapping.cpp > CMakeFiles/render.dir/photon_mapping.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/photon_mapping.cpp > CMakeFiles/render.dir/photon_mapping.cpp.i
 
 CMakeFiles/render.dir/photon_mapping.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/photon_mapping.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/photon_mapping.cpp -o CMakeFiles/render.dir/photon_mapping.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/photon_mapping.cpp -o CMakeFiles/render.dir/photon_mapping.cpp.s
 
 CMakeFiles/render.dir/photon_mapping.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/photon_mapping.cpp.o.requires
@@ -372,18 +372,18 @@ CMakeFiles/render.dir/photon_mapping.cpp.o.provides: CMakeFiles/render.dir/photo
 CMakeFiles/render.dir/photon_mapping.cpp.o.provides.build: CMakeFiles/render.dir/photon_mapping.cpp.o
 
 CMakeFiles/render.dir/kdtree.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/kdtree.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/kdtree.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_15)
+CMakeFiles/render.dir/kdtree.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/kdtree.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/kdtree.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/kdtree.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/kdtree.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/kdtree.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/kdtree.cpp
 
 CMakeFiles/render.dir/kdtree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/kdtree.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/kdtree.cpp > CMakeFiles/render.dir/kdtree.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/kdtree.cpp > CMakeFiles/render.dir/kdtree.cpp.i
 
 CMakeFiles/render.dir/kdtree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/kdtree.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/kdtree.cpp -o CMakeFiles/render.dir/kdtree.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/kdtree.cpp -o CMakeFiles/render.dir/kdtree.cpp.s
 
 CMakeFiles/render.dir/kdtree.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/kdtree.cpp.o.requires
@@ -395,18 +395,18 @@ CMakeFiles/render.dir/kdtree.cpp.o.provides: CMakeFiles/render.dir/kdtree.cpp.o.
 CMakeFiles/render.dir/kdtree.cpp.o.provides.build: CMakeFiles/render.dir/kdtree.cpp.o
 
 CMakeFiles/render.dir/mtrand.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/mtrand.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mtrand.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_16)
+CMakeFiles/render.dir/mtrand.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mtrand.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/mtrand.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/mtrand.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mtrand.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/mtrand.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mtrand.cpp
 
 CMakeFiles/render.dir/mtrand.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/mtrand.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mtrand.cpp > CMakeFiles/render.dir/mtrand.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mtrand.cpp > CMakeFiles/render.dir/mtrand.cpp.i
 
 CMakeFiles/render.dir/mtrand.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/mtrand.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/mtrand.cpp -o CMakeFiles/render.dir/mtrand.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/mtrand.cpp -o CMakeFiles/render.dir/mtrand.cpp.s
 
 CMakeFiles/render.dir/mtrand.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/mtrand.cpp.o.requires
@@ -418,18 +418,18 @@ CMakeFiles/render.dir/mtrand.cpp.o.provides: CMakeFiles/render.dir/mtrand.cpp.o.
 CMakeFiles/render.dir/mtrand.cpp.o.provides.build: CMakeFiles/render.dir/mtrand.cpp.o
 
 CMakeFiles/render.dir/boundingbox.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/boundingbox.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_17)
+CMakeFiles/render.dir/boundingbox.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/boundingbox.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/boundingbox.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/boundingbox.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/boundingbox.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/boundingbox.cpp
 
 CMakeFiles/render.dir/boundingbox.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/boundingbox.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.cpp > CMakeFiles/render.dir/boundingbox.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/boundingbox.cpp > CMakeFiles/render.dir/boundingbox.cpp.i
 
 CMakeFiles/render.dir/boundingbox.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/boundingbox.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/boundingbox.cpp -o CMakeFiles/render.dir/boundingbox.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/boundingbox.cpp -o CMakeFiles/render.dir/boundingbox.cpp.s
 
 CMakeFiles/render.dir/boundingbox.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/boundingbox.cpp.o.requires
@@ -441,18 +441,18 @@ CMakeFiles/render.dir/boundingbox.cpp.o.provides: CMakeFiles/render.dir/bounding
 CMakeFiles/render.dir/boundingbox.cpp.o.provides.build: CMakeFiles/render.dir/boundingbox.cpp.o
 
 CMakeFiles/render.dir/utils.cpp.o: CMakeFiles/render.dir/flags.make
-CMakeFiles/render.dir/utils.cpp.o: /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/utils.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_18)
+CMakeFiles/render.dir/utils.cpp.o: /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/utils.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/render.dir/utils.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/utils.cpp.o -c /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/utils.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/render.dir/utils.cpp.o -c /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/utils.cpp
 
 CMakeFiles/render.dir/utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/render.dir/utils.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/utils.cpp > CMakeFiles/render.dir/utils.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/utils.cpp > CMakeFiles/render.dir/utils.cpp.i
 
 CMakeFiles/render.dir/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/render.dir/utils.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src/utils.cpp -o CMakeFiles/render.dir/utils.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ben/Documents/ACG/ACG-Final/ben_hw3/src/utils.cpp -o CMakeFiles/render.dir/utils.cpp.s
 
 CMakeFiles/render.dir/utils.cpp.o.requires:
 .PHONY : CMakeFiles/render.dir/utils.cpp.o.requires
@@ -554,6 +554,6 @@ CMakeFiles/render.dir/clean:
 .PHONY : CMakeFiles/render.dir/clean
 
 CMakeFiles/render.dir/depend:
-	cd /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles/render.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ben/Documents/ACG/ACG-Final/ben_hw3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ben/Documents/ACG/ACG-Final/ben_hw3/src /home/ben/Documents/ACG/ACG-Final/ben_hw3/src /home/ben/Documents/ACG/ACG-Final/ben_hw3/build /home/ben/Documents/ACG/ACG-Final/ben_hw3/build /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles/render.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/render.dir/depend
 

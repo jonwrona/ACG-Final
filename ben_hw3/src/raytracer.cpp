@@ -254,7 +254,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
   //std::cout<<"answer is ";
   //print_vec(answer);
 
-  return answer;
+  return answer*3.f;
 
 }
 
@@ -451,7 +451,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
   // // =================================
   // // ASSIGNMENT:  ADD REFLECTIVE LOGIC
   // // =================================
-  std::cout << glm::length(reflectiveColor) << std::endl;
+  //std::cout << glm::length(reflectiveColor) << std::endl;
   if (glm::length(reflectiveColor) > 0.001) {
     glm::vec3 ray_dir=glm::normalize(ray.getDirection());
     normal=glm::normalize(normal);

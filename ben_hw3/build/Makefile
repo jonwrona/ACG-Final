@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/src
+CMAKE_SOURCE_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build
+CMAKE_BINARY_DIR = /home/ben/Documents/ACG/ACG-Final/ben_hw3/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/wronaj/cs-hw-rpi/comp-graphics/ACG-Final/ben_hw3/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ben/Documents/ACG/ACG-Final/ben_hw3/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
