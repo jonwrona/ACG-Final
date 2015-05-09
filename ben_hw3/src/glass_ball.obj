@@ -4,7 +4,7 @@ reflective 0 0 0
 emitted 70 70 70
 
 material
-diffuse 0.2 0.9 0.2
+diffuse 0 0 0
 reflective 0 0 0
 emitted 0 0 0
 
@@ -39,7 +39,7 @@ s 0 0 0 0.1
 m 3
 s 0 0 0 0.08
 
-background_color 0.2 0.1 0.6
+background_color 0 0 0
 
 PerspectiveCamera {
   camera_position    < .53406, .202057, .592681 >
