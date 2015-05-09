@@ -35,7 +35,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       sigma_t=args->sigma_t_prime.x; //this corresponds to the green value sigma_t;
       sigma_s=args->sigma_s_prime.x;
       sigma_a=args->sigma_a.x;
-      lightColor=glm::vec3(lightColor_.x, 0.f,0.f);
+      lightColor=glm::vec3(lightColor_.x, 0.0f,0.0f);
       //std::cout<<"first lightColor is ";
       //print_vec(lightColor);
 
@@ -252,25 +252,6 @@ glm::vec3 sqrt(const glm::vec3 &x){
   return ans;
 }
 
-float safe_length(glm::vec3 a){
-  /*
-  glm::vec3 zeros(0.0,0.0,0.0);
-  std::cout<<"in safe length\n";
-  float answer;
-  if (a==zeros){
-    
-    answer= 0;
-    std::cout<<"in safe length\n";
-  }
-  else{
-    
-    answer= glm::length(a);
-    std::cout<<"in safe length\n";
-  }
-  */
-  return sqrt(a.x*a.x+a.y*a.y+a.z*a.z);
-}
-
 //here w is the direction to the light, n1 is the outward facing normal of the surface, and nu is the index of refraction
 float RayTracer::Fresnel_transmittance(const float &nu, const glm::vec3 &w_, const glm::vec3 &n1_) const{
 
@@ -336,7 +317,8 @@ bool RayTracer::CastRay(const Ray &ray, Hit &h, bool use_rasterized_patches) con
 
 // ===========================================================================
 // does the recursive (shadow rays & recursive rays) work
-glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
+// the default index of refraction is set to 1.000277 (air)
+glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside) const {
 
   // First cast a ray and see if we hit anything.
   hit = Hit();
@@ -388,8 +370,6 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
   for (int i = 0; i < num_lights; i++) {
 
     Face *f = mesh->getLights()[i];
-    //this is my hard shadows code
-    #if 1
     glm::vec3 lightColor = f->getMaterial()->getEmittedColor() * f->getArea();
     glm::vec3 myLightColor;
     glm::vec3 lightCentroid = f->computeCentroid();
@@ -410,87 +390,112 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
       return tmp;
       #endif
     }
+
+    for (int j = 0; j < args->num_shadow_samples; j++) {
+      glm::vec3 direction = dirToLightCentroid;
+      glm::vec3 lightPoint = lightCentroid;
+      if (args->num_shadow_samples > 1) {
+        // generate random point on light
+        lightPoint = f->RandomPoint();
+        // get direction towards said point
+        direction = glm::normalize(lightPoint - point);
+      }
+      Ray shadowRay = Ray(point, direction);
+      Hit shadowHit = Hit();
+
+      CastRay(shadowRay, shadowHit, false);
+      bool blocked = shadowHit.getMaterial() != f->getMaterial();
+      bool transparent = shadowHit.getMaterial()->getRefraction() > 0.0f;
+      if (!blocked || transparent) {
+        float distToLightPoint = glm::length(lightPoint-point);
+        myLightColor = lightColor / float(M_PI*distToLightPoint*distToLightPoint);
+        if (args->num_shadow_samples > 1) myLightColor /= args->num_shadow_samples;
+
+        // add the lighting contribution from this particular light at this point
+        // (fix this to check for blockers between the light & this surface)
+        answer += m->Shade(ray,hit,direction,myLightColor,args);
+        RayTree::AddShadowSegment(shadowRay, 0, shadowHit.getT());
+      }
+    }
+  }
+
     // ===========================================
     // ASSIGNMENT:  ADD SHADOW & SOFT SHADOW LOGIC
     // ===========================================
-    
-    float distToLightCentroid = glm::length(lightCentroid-point);
-    myLightColor = lightColor / float(M_PI*distToLightCentroid*distToLightCentroid);
-    
-    // add the lighting contribution from this particular light at this point
-    // (fix this to check for blockers between the light & this surface)
-    
-    //hard shadow stuff here
-    //cast a ray towards the light, if we hit it then light this up
-    Hit tmp_hit;
-    Ray lightRay(point, dirToLightCentroid);
 
-    CastRay(lightRay,tmp_hit,false);
-    if((tmp_hit.getT()<distToLightCentroid+0.001 and tmp_hit.getT()>distToLightCentroid-0.001)){
-      answer += m->Shade(ray,hit,dirToLightCentroid,myLightColor,args);
-    }
-
-      
-    #endif
-    //this is my soft shadows code
-    #if 0
-    for (int i=0; i<4; i++){
-      glm::vec3 lightColor = f->getMaterial()->getEmittedColor() * f->getArea();
-      glm::vec3 myLightColor;
-      glm::vec3 lightCentroid = f->Corner_Num(i);
-      //if you want random selection use the code below instead of the above line
-      
-      //glm::vec3 lightCentroid = f->RandomPoint();
-      glm::vec3 dirToLightCentroid = glm::normalize(lightCentroid-point); 
-
-      // ===========================================
-      // ASSIGNMENT:  ADD SHADOW & SOFT SHADOW LOGIC
-      // ===========================================
-      
-      float distToLightCentroid = glm::length(lightCentroid-point);
-      myLightColor = lightColor / float(M_PI*distToLightCentroid*distToLightCentroid);
-      
-      // add the lighting contribution from this particular light at this point
-      // (fix this to check for blockers between the light & this surface)
-      
-      //hard shadow stuff here
-      //cast a ray towards the light, if we hit it then light this up
-      Hit tmp_hit;
-      Ray lightRay(point, dirToLightCentroid);
-
-      CastRay(lightRay,tmp_hit,false);
-      if((tmp_hit.getT()<distToLightCentroid+0.001 and tmp_hit.getT()>distToLightCentroid-0.001)){
-        glm::vec3 tmp=m->Shade(ray,hit,dirToLightCentroid,myLightColor,args);
-        tmp/=4.0;
-        answer += tmp;
-      }
-    }
-    #endif
-  }
 
   // ----------------------------------------------
   // add contribution from reflection, if the surface is shiny
   glm::vec3 reflectiveColor = m->getReflectiveColor();
 
 
-  // =================================
-  // ASSIGNMENT:  ADD REFLECTIVE LOGIC
-  // =================================
-  #if 1
-  //first we must reflect the ray across the normal
-  glm::vec3 ray_dir=ray.getDirection();
-  normal=glm::normalize(normal);
-  glm::vec3 reflected_dir=glm::normalize(ray_dir-2*glm::dot(ray_dir, normal)*normal);
-  //next we trace this ray and get the color reflected onto it
-  Ray reflected_ray(point,reflected_dir);
-  Hit reflection_hit;
-
-  if (glm::length(reflectiveColor) > 0.001 and bounce_count>0){
+  // // =================================
+  // // ASSIGNMENT:  ADD REFLECTIVE LOGIC
+  // // =================================
+  if (glm::length(reflectiveColor) > 0.001) {
+    glm::vec3 ray_dir=glm::normalize(ray.getDirection());
+    normal=glm::normalize(normal);
+    glm::vec3 reflected_dir=glm::normalize(ray_dir-2*glm::dot(ray_dir, normal)*normal);
+    //next we trace this ray and get the color reflected onto it
+    Ray reflected_ray(point,reflected_dir);
+    Hit reflection_hit;
     answer += glm::normalize(reflectiveColor) * TraceRay(reflected_ray, reflection_hit, bounce_count-1);
-
+    RayTree::AddReflectedSegment(reflected_ray, 0, reflection_hit.getT());
   }
-  //next we update answer
-  #endif
+
+  // =================================
+  // ASSIGNMENT:  ADD REFRACTIVE LOGIC
+  // =================================
+  float refraction = m->getRefraction();
+  if (refraction > 0.0 && bounce_count > 0) {
+    float air = 1.000277f;
+    glm::vec3 incident = glm::normalize(ray.getDirection());
+
+    float n = air / refraction;
+    float n1 = air;
+    float n2 = refraction;
+    if (inside) {
+      normal = -1.0f * normal;
+      n = refraction / air;
+      n1 = refraction;
+      n2 = air;
+    }
+
+    float cosI = -1.0f * glm::dot(normal, incident);
+    float sinT2 = n * n * (1.0f - cosI * cosI);
+    float reflectivity;
+    if (sinT2 > 1.0f) reflectivity = 1.0f;
+    else {
+      float cosT = sqrt(1.0f - sinT2);
+      float rOrth = (n1 * cosI - n2 * cosT) / (n1 * cosI + n2 * cosT);
+      float rPar = (n2 * cosI - n1 * cosT) / (n2 * cosI + n1 * cosT);
+      reflectivity = (rOrth * rOrth + rPar + rPar) / 2.0f;
+    }
+    float transitivity = 1.0f - reflectivity;
+    if (transitivity > 0.0) {
+      glm::vec3 direction;
+      float cosI = -1.0f * glm::dot(normal, incident);
+      float sinT2 = n * n * (1.0f - cosI * cosI);
+
+      if (sinT2 < 1.0) {
+        float cosT = sqrt(1.0f - sinT2);
+        direction = n * incident + (n * cosI - cosT) * normal;
+        direction = glm::normalize(direction);
+        Ray refractRay = Ray(point, glm::normalize(direction));
+        Hit refractHit = Hit();
+        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1, !inside);
+        RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
+      }
+    }
+    if (reflectivity > 0.0 && !inside) {
+      float cosI = -1.0f * glm::dot(normal, incident);
+      glm::vec3 direction = incident + 2 * cosI * normal;
+      Ray reflectRay = Ray(point, glm::normalize(direction));
+      Hit reflectHit = Hit();
+      answer += reflectivity * TraceRay(reflectRay, reflectHit, bounce_count-1);
+      RayTree::AddReflectedSegment(reflectRay, 0, reflectHit.getT());
+    }
+  }
 
   
   return answer; 

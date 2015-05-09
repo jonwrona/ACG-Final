@@ -254,15 +254,26 @@ void Mesh::Load(ArgParser *_args) {
       assert (token == "reflective");
       reflective = glm::vec3(r,g,b);
       float roughness = 0;
+      bool transparent = false;
+      float ind_of_refract = 0.0;
       objfile >> token;
+      if (token == "refraction") {
+        objfile >> ind_of_refract;
+        objfile >> token;
+      }
+      bool sss = false;
+      if (token == "sss") {
+        sss = true;
+        objfile >> token;
+      }
       if (token == "roughness") {
-	objfile >> roughness;
-	objfile >> token;
+      	objfile >> roughness;
+      	objfile >> token;
       } 
       assert (token == "emitted");
       objfile >> r >> g >> b;
       emitted = glm::vec3(r,g,b);
-      materials.push_back(new Material(texture_file,diffuse,reflective,emitted,roughness));
+      materials.push_back(new Material(texture_file,diffuse,reflective,emitted, ind_of_refract, sss, roughness));
     } else {
       std::cout << "UNKNOWN TOKEN " << token << std::endl;
       exit(0);
