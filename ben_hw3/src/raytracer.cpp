@@ -111,7 +111,8 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
 
       CastRay(shadowRay, shadowHit, false);
       bool blocked = shadowHit.getMaterial() != f->getMaterial();
-      if (!blocked ) {
+      bool transparent = shadowHit.getMaterial()->getRefraction() > 0.0f;
+      if (!blocked || transparent) {
         float distToLightPoint = glm::length(lightPoint-point);
         myLightColor = lightColor / float(M_PI*distToLightPoint*distToLightPoint);
         if (args->num_shadow_samples > 1) myLightColor /= args->num_shadow_samples;
@@ -156,6 +157,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     float n1 = air;
     float n2 = refraction;
     if (inside) {
+      normal = -1.0f * normal;
       n = refraction / air;
       n1 = refraction;
       n2 = air;
@@ -201,26 +203,6 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
   return answer; 
 
 }
-
-// find direction of refraction
-// float n = air / material;
-// if (inside) {
-//   n = material / air;
-//   normal = -1.0f * normal;
-// } 
-
-// // get direction of refraction
-// float c0 = -1.0f * glm::dot(normal, ray.getDirection());
-// float c1 = sqrt(1.0 - pow(n, 2.0) * (1.0 - pow(c0, 2.0)));
-// glm::vec3 direction = (n * ray.getDirection()) + ((n * c0 - c1) * normal);
-
-// // refract
-// // point = point + 0.00001f * ray.getDirection();
-// Ray refractRay = Ray(point, direction);
-// Hit refractHit = Hit();
-// if (inside == m) answer+= TraceRay(refractRay, refractHit, bounce_count-1);
-// else answer+= TraceRay(refractRay, refractHit, bounce_count-1, m);
-// RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
 
 
 
