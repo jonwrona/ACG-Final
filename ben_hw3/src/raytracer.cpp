@@ -265,6 +265,11 @@ glm::vec3 sqrt(const glm::vec3 &x){
   return ans;
 }
 
+float safe_length(glm::vec3 a){
+
+  return sqrt(a.x*a.x+a.y*a.y+a.z*a.z);
+}
+
 //here w is the direction to the light, n1 is the outward facing normal of the surface, and nu is the index of refraction
 float RayTracer::Fresnel_transmittance(const float &nu, const glm::vec3 &w_, const glm::vec3 &n1_) const{
 
@@ -284,10 +289,10 @@ float RayTracer::Fresnel_transmittance(const float &nu, const glm::vec3 &w_, con
   //std::cout<<"we're here\n";
   glm::vec3 RS_VEC=((float)cos(theta)*n1-sqrt_term*n2)/(n1*(float)cos(theta)+n2*sqrt_term);
   //std::cout<<"RS_VEC is "<<RS_VEC.x<<" "<<RS_VEC.y<<" "<<RS_VEC.z<<std::endl;
-  float Rs =  glm::length(((float)cos(theta)*n1-sqrt_term*n2)/(n1*(float)cos(theta)+n2*sqrt_term));
+  float Rs =  safe_length(((float)cos(theta)*n1-sqrt_term*n2)/(n1*(float)cos(theta)+n2*sqrt_term));
   Rs*=Rs;
 
-  float Rp =  glm::length((sqrt_term*n1-(float)cos(theta)*n2)/(sqrt_term*n1+(float)cos(theta)*n2));  
+  float Rp =  safe_length((sqrt_term*n1-(float)cos(theta)*n2)/(sqrt_term*n1+(float)cos(theta)*n2));  
   Rp*=Rp;
   float R=(Rs+Rp)/2.f;
   float T;
@@ -390,7 +395,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     //if we are trying to visualize the fresnel transmittance
     //this if statement is a hack for now
     if (m->isSubsurfaceMaterial()) std::cout << "SSS" << std::endl;
-    if(args->ss_scatter and m->isSubsurfaceMaterial()){
+    if(args->ss_scatter and glm::length(m->getReflectiveColor())>0.1f){
       #if 0
       float F = this->Fresnel_transmittance(args->nu, -dirToLightCentroid, normal);
       F = F*F;
