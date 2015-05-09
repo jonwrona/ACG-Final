@@ -4,9 +4,10 @@ reflective 0 0 0
 emitted 70 70 70
 
 material
-diffuse 0 0 0
+texture_file wood.ppm
 reflective 0 0 0
 emitted 0 0 0
+
 
 material 
 diffuse 0 0 0
@@ -27,10 +28,14 @@ v -3 10 7
 f 1 2 3 4
 
 m 1
-v -10 -1 -10
-v -10 -1 10
-v 10 -1 10
-v 10 -1 -10
+v -10.000000 -1.000000 -10.000000
+vt 0 1
+v -10.000000 -1.000000 10.000000
+vt 0 0
+v 10.000000 -1.000000 10.000000
+vt 1 0
+v 10.000000 -1.000000 -10.000000
+vt 1 1
 f 5 6 7 8
 
 m 2
@@ -39,7 +44,7 @@ s 0 0 0 0.1
 m 3
 s 0 0 0 0.08
 
-background_color 0 0 0
+background_color 0 0 1
 
 PerspectiveCamera {
   camera_position    < .53406, .202057, .592681 >

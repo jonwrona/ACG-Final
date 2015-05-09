@@ -82,6 +82,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     #if 1
     //first we sample for the diffusion term. This follows
     for (int i=0; i<args->num_ss_samples; i++){
+      glm::vec3 lightPos=f->RandomPoint();
       //first compute the coefficents we need
       float A=(1.f-args->Fdr)/(1.f+args->Fdr);
       float D=1.f/(3.f*sigma_t);
@@ -154,14 +155,14 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       float Rd=albedo/(12.5663706144)*((sigma_tr*dr+1.f)* ((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr)) + ( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) )) );
       //std::cout<<"Term 1 is "<<(sigma_tr*dr+1.f)<<" term 2 is "<<((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr))<<std::endl;
       //std::cout<<"and term 3 is "<<( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) ))<<std::endl;
-      glm::vec3 wi=glm::normalize(lightPos_-xi);
+      glm::vec3 wi=glm::normalize(lightPos-xi);
       float Fo=Fresnel_transmittance(nu, wo_, no);
       float Fi=Fresnel_transmittance(1.f/nu, -wi, ni);
       float FresnelTerm=Fo+Fi;
       // /std::cout<<"Fo is "<<Fo<<" and Fi is "<<Fi<<" and nu is "<<nu<<std::endl;
        if( ! isnan(Rd) and ! isinf(Rd)){
         //std::cout<<"Rd seems good"<<std::endl;
-        float term=FresnelTerm*Rd/(glm::length(xi-lightPos_ )*glm::length(xi-lightPos_ )*(float)12.5663706144)*((float)glm::dot(xi-lightPos_, -ni));
+        float term=FresnelTerm*Rd/(glm::length(xi-lightPos )*glm::length(xi-lightPos )*(float)12.5663706144)*((float)glm::dot(xi-lightPos, -ni));
         //std::cout<<"Term is "<<term<<std::endl;
         if(term>0){ //really should be if term>0
           pseudo_answer_diff+=term*lightColor;
@@ -410,7 +411,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     glm::vec3 dirToLightCentroid = glm::normalize(lightCentroid-point); 
     //if we are trying to visualize the fresnel transmittance
     //this if statement is a hack for now
-    if (m->isSubsurfaceMaterial()) std::cout << "SSS" << std::endl;
+    //if (m->isSubsurfaceMaterial()) std::cout << "SSS" << std::endl;
     if(args->ss_scatter and glm::length(m->getReflectiveColor())>0.1f){
       #if 0
       float F = this->Fresnel_transmittance(args->nu, -dirToLightCentroid, normal);
