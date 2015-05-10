@@ -40,7 +40,7 @@ public:
   bool CastRay(const Ray &ray, Hit &h, bool use_sphere_patches) const;
 
   // does the recursive work
-  glm::vec3 TraceRay(Ray &ray, Hit &hit, int bounce_count = 0, bool inside = false) const;
+  glm::vec3 TraceRay(Ray &ray, Hit &hit, int bounce_count = 0) const;
 
   //add my new functions here
   float Fresnel_transmittance(const float &nu, const glm::vec3 &w, const glm::vec3 &n1) const;

@@ -82,6 +82,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
     #if 1
     //first we sample for the diffusion term. This follows
     for (int i=0; i<args->num_ss_samples; i++){
+      glm::vec3 lightPos=f->RandomPoint();
       //first compute the coefficents we need
       float A=(1.f-args->Fdr)/(1.f+args->Fdr);
       float D=1.f/(3.f*sigma_t);
@@ -154,14 +155,14 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       float Rd=albedo/(12.5663706144)*((sigma_tr*dr+1.f)* ((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr)) + ( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) )) );
       //std::cout<<"Term 1 is "<<(sigma_tr*dr+1.f)<<" term 2 is "<<((float)exp((double)(-sigma_tr*dr))/(sigma_t*dr*dr*dr))<<std::endl;
       //std::cout<<"and term 3 is "<<( zv*(sigma_tr*dv+1.f) * ( exp((double)-sigma_tr*dv)/(sigma_t*dv*dv*dv) ))<<std::endl;
-      glm::vec3 wi=glm::normalize(lightPos_-xi);
+      glm::vec3 wi=glm::normalize(lightPos-xi);
       float Fo=Fresnel_transmittance(nu, wo_, no);
       float Fi=Fresnel_transmittance(1.f/nu, -wi, ni);
       float FresnelTerm=Fo+Fi;
       // /std::cout<<"Fo is "<<Fo<<" and Fi is "<<Fi<<" and nu is "<<nu<<std::endl;
        if( ! isnan(Rd) and ! isinf(Rd)){
         //std::cout<<"Rd seems good"<<std::endl;
-        float term=FresnelTerm*Rd/(glm::length(xi-lightPos_ )*glm::length(xi-lightPos_ )*(float)12.5663706144)*((float)glm::dot(xi-lightPos_, -ni));
+        float term=FresnelTerm*Rd/(glm::length(xi-lightPos )*glm::length(xi-lightPos )*(float)12.5663706144)*((float)glm::dot(xi-lightPos, -ni));
         //std::cout<<"Term is "<<term<<std::endl;
         if(term>0){ //really should be if term>0
           pseudo_answer_diff+=term*lightColor;
@@ -352,7 +353,7 @@ bool RayTracer::CastRay(const Ray &ray, Hit &h, bool use_rasterized_patches) con
 // ===========================================================================
 // does the recursive (shadow rays & recursive rays) work
 // the default index of refraction is set to 1.000277 (air)
-glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside) const {
+glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
 
   // First cast a ray and see if we hit anything.
   hit = Hit();
@@ -410,7 +411,7 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     glm::vec3 dirToLightCentroid = glm::normalize(lightCentroid-point); 
     //if we are trying to visualize the fresnel transmittance
     //this if statement is a hack for now
-    if (m->isSubsurfaceMaterial()) std::cout << "SSS" << std::endl;
+    //if (m->isSubsurfaceMaterial()) std::cout << "SSS" << std::endl;
     if(args->ss_scatter and glm::length(m->getReflectiveColor())>0.1f){
       #if 0
       float F = this->Fresnel_transmittance(args->nu, -dirToLightCentroid, normal);
@@ -487,10 +488,13 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     float air = 1.000277f;
     glm::vec3 incident = glm::normalize(ray.getDirection());
 
+    bool entering = false;
+    if (glm::dot(normal, incident) < 0.0f) entering = true;
+
     float n = air / refraction;
     float n1 = air;
     float n2 = refraction;
-    if (inside) {
+    if (!entering) {
       normal = -1.0f * normal;
       n = refraction / air;
       n1 = refraction;
@@ -519,11 +523,11 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
         direction = glm::normalize(direction);
         Ray refractRay = Ray(point, glm::normalize(direction));
         Hit refractHit = Hit();
-        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1, !inside);
+        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1);
         RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
       }
     }
-    if (reflectivity > 0.0 && !inside) {
+    if (reflectivity > 0.0) {
       float cosI = -1.0f * glm::dot(normal, incident);
       glm::vec3 direction = incident + 2 * cosI * normal;
       Ray reflectRay = Ray(point, glm::normalize(direction));
