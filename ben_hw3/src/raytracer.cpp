@@ -353,7 +353,7 @@ bool RayTracer::CastRay(const Ray &ray, Hit &h, bool use_rasterized_patches) con
 // ===========================================================================
 // does the recursive (shadow rays & recursive rays) work
 // the default index of refraction is set to 1.000277 (air)
-glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside) const {
+glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count) const {
 
   // First cast a ray and see if we hit anything.
   hit = Hit();
@@ -488,10 +488,13 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
     float air = 1.000277f;
     glm::vec3 incident = glm::normalize(ray.getDirection());
 
+    bool entering = false;
+    if (glm::dot(normal, incident) < 0.0f) entering = true;
+
     float n = air / refraction;
     float n1 = air;
     float n2 = refraction;
-    if (inside) {
+    if (!entering) {
       normal = -1.0f * normal;
       n = refraction / air;
       n1 = refraction;
@@ -520,11 +523,11 @@ glm::vec3 RayTracer::TraceRay(Ray &ray, Hit &hit, int bounce_count, bool inside)
         direction = glm::normalize(direction);
         Ray refractRay = Ray(point, glm::normalize(direction));
         Hit refractHit = Hit();
-        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1, !inside);
+        answer += transitivity * TraceRay(refractRay, refractHit, bounce_count-1);
         RayTree::AddTransmittedSegment(refractRay, 0, refractHit.getT());
       }
     }
-    if (reflectivity > 0.0 && !inside) {
+    if (reflectivity > 0.0) {
       float cosI = -1.0f * glm::dot(normal, incident);
       glm::vec3 direction = incident + 2 * cosI * normal;
       Ray reflectRay = Ray(point, glm::normalize(direction));
