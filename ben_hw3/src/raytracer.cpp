@@ -158,7 +158,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       glm::vec3 wi=glm::normalize(lightPos-xi);
       float Fo=Fresnel_transmittance(nu, wo_, no);
       float Fi=Fresnel_transmittance(1.f/nu, -wi, ni);
-      float FresnelTerm=Fo+Fi;
+      float FresnelTerm=Fo*Fi;
       // /std::cout<<"Fo is "<<Fo<<" and Fi is "<<Fi<<" and nu is "<<nu<<std::endl;
        if( ! isnan(Rd) and ! isinf(Rd)){
         //std::cout<<"Rd seems good"<<std::endl;
@@ -271,7 +271,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
   //std::cout<<"answer is ";
   //print_vec(answer);
 
-  return answer*10.f;
+  return answer*20.f;
 
 }
 
