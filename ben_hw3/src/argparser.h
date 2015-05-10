@@ -130,6 +130,14 @@ public:
       }
       else if (std::string(argv[i]) == std::string("-skim_milk")) {
   nu=1.f/1.3f;
+  sigma_s_prime=glm::vec3(0.74f, 0.88f, 1.01f);
+  sigma_a=glm::vec3(0.032f, 0.017f, 0.0145f);
+  sigma_t_prime = sigma_s_prime+sigma_a;
+  Fdr = -1.440/(nu*nu)+0.710/nu+0.668+0.0636*nu;
+ 
+      }
+      else if (std::string(argv[i]) == std::string("-skin")) {
+  nu=1.f/1.3f;
   sigma_s_prime=glm::vec3(0.7f, 1.22f, 1.90f);
   sigma_a=glm::vec3(0.0014f, 0.0025f, 0.0142f);
   sigma_t_prime = sigma_s_prime+sigma_a;
