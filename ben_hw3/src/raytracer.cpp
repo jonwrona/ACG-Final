@@ -219,7 +219,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
       wi=glm::normalize(r_inside.getDirection());
 
       //si is the percieved distance
-      float si=glm::length(xi-xo);
+      float si=glm::length(xi-xInside)+glm::length(xo-xInside);
       //si prime is an estimate of the refracted distance through the material
       float si_prime=si*(glm::dot(wi, ni)/(float)sqrt(1.0-(float)(1.0/(double)nu)*(float)(1.0/(double)nu)*(float)(1.0-pow((double)glm::dot(wi,ni),2.0)))) ; //not sure what they meant by n(xi) in the paper...
       //float F=Fresnel_transmittance(nu, wo, no)*Fresnel_transmittance(nu, wi, ni); //assuming fresnel transmittance is 1-fresnel reflection
@@ -270,7 +270,7 @@ glm::vec3 RayTracer::ss_scatter(const Hit &hit, const glm::vec3 xo, const glm::v
   //std::cout<<"answer is ";
   //print_vec(answer);
 
-  return answer*10.f;
+  return answer*5.f;
 
 }
 
